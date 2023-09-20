@@ -1,0 +1,159 @@
+<div class="container">
+  <div class="">
+    <div class="mt-1 m-auto">
+      <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Registration Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="row">
+              <form
+                [formGroup]="userForm"
+                (ngSubmit)="onSubmit(userForm.value)" 
+                class="row"
+              >
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    <input
+                      type="text"
+                      id="FirstName"
+                      formControlName="firstName"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="LastName">Last Name</label>
+                    <input
+                      type="text"
+                      id="LastName"
+                      formControlName="lastName"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input
+                      type="email"
+                      id="Email"
+                      formControlName="email"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Gender</label>
+                    <div class=" form-control">
+
+                        <div class="form-check form-check-inline">
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="Gender"
+                            value="Male"
+                            formControlName="gender"
+                            />
+                            <label class="form-check-label" for="inlineRadio1"
+                            >Male</label
+                            >
+                        </div>
+                        <div class="form-check form-check-inline ms-4">
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="Gender"
+                            value="Female"
+                            formControlName="gender"
+                            />
+                            <label class="form-check-label" for="inlineRadio2"
+                            >Female</label
+                            >
+                        </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Date Of Birth</label>
+                    <input
+                      type="date"
+                      formControlName="dateOfBirth"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Mobile No</label>
+                    <input
+                      type="text"
+                      formControlName="mobileNo"
+                      class="form-control"
+                    />
+                    <small class="text-danger" *ngIf="userForm.controls.mobileNo.invalid && userForm.controls.mobileNo.touched ">Mobile No should be numeric</small>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="Email">Address</label>
+                    <input
+                      type="text"
+                      formControlName="address1"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">City</label>
+                    <input
+                      type="text"
+                      formControlName="city"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">State</label>
+                    <input
+                      type="text"
+                      formControlName="state"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Postal Code</label>
+                    <input
+                      type="text"
+                      formControlName="postalCode"
+                      class="form-control"
+                    />
+                    <small class="text-danger" *ngIf="userForm.controls.postalCode.invalid && userForm.controls.postalCode.touched ">Postal code Should be of 6 numbers</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Country</label>
+                    <input
+                      type="text"
+                      formControlName="country"
+                      class="form-control"
+                    />
+                  </div>
+                 
+
+                  <div class="form-group">
+                    <label for="Email">Password</label>
+                    <input
+                      type="password"
+                      formControlName="password"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+                <!-- Add similar form controls for other properties in the User class -->
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary mt-3 col-3" [disabled]="userForm.invalid" >Submit</button>
+                    <button type="button" class=" btn btn-success mt-3 ms-4 col-3" routerLink="/login">Already Has Account? Login</button>
+                </div>   
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
